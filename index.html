@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNIDAD NACIONAL CANINA</title>
+    <title>DOCUMENTOS PARA INSPECCIÓNES TOTALES ANTINARCÓTICOS</title>
     <style>
         /* Fondo general */
         body {
@@ -72,19 +72,34 @@
 
         li {
             margin: 10px 0;
+            cursor: pointer;
         }
+
+        /* Estilo para las imágenes de referencia */
+        .doc-image {
+            display: none;  /* Inicialmente la imagen está oculta */
+            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
     </style>
     <script>
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
             section.classList.toggle("hidden");
         }
+
+        function toggleImage(docId) {
+            const image = document.getElementById(docId);
+            image.classList.toggle("hidden");
+        }
     </script>
 </head>
 <body>
     <div class="container">
         <!-- Logo de la empresa -->
-        <img src="logo.png" alt="Logo de la empresa" class="logo">
+        <img src="https://raw.githubusercontent.com/usuario/repositorio/branch/images/logo.png" alt="Logo de la empresa" class="logo">
 
         <h1>DOCUMENTOS PARA INSPECCIÓNES TOTALES ANTINARCÓTICOS</h1>
         <p>SELECCIONA EL BOTÓN DE TU INTERES.</p>
@@ -98,13 +113,20 @@
         <div id="requisitos" class="hidden">
             <h2>Documentos Requeridos</h2>
             <ul>
-                <li>1. Notificación del Correo Impresa</li>
-                <li>2. Carta de Autorización del Exportador</li>
-                <li>3. Copias de Cédula, Exportador y Representante Legal</li>
-                <li>4. Declaración Aduanera DAE</li>
-                <li>5. Interchange Equipamen del Contenedor</li>
-                <li>6. Fáctura Comercial</li>
-                <li>7. Autorización de Ingreso y Salida de Vehículos</li>
+                <li onclick="toggleImage('image1')">1. Notificación del Correo Impresa</li>
+                <img id="image1" src="URL_IMAGEN1" alt="Imagen de referencia 1" class="doc-image">
+                <li onclick="toggleImage('image2')">2. Carta de Autorización del Exportador</li>
+                <img id="image2" src="URL_IMAGEN2" alt="Imagen de referencia 2" class="doc-image">
+                <li onclick="toggleImage('image3')">3. Copias de Cédula, Exportador y Representante Legal</li>
+                <img id="image3" src="URL_IMAGEN3" alt="Imagen de referencia 3" class="doc-image">
+                <li onclick="toggleImage('image4')">4. Declaración Aduanera DAE</li>
+                <img id="image4" src="URL_IMAGEN4" alt="Imagen de referencia 4" class="doc-image">
+                <li onclick="toggleImage('image5')">5. Interchange Equipamen del Contenedor</li>
+                <img id="image5" src="URL_IMAGEN5" alt="Imagen de referencia 5" class="doc-image">
+                <li onclick="toggleImage('image6')">6. Fáctura Comercial</li>
+                <img id="image6" src="URL_IMAGEN6" alt="Imagen de referencia 6" class="doc-image">
+                <li onclick="toggleImage('image7')">7. Autorización de Ingreso y Salida de Vehículos</li>
+                <img id="image7" src="URL_IMAGEN7" alt="Imagen de referencia 7" class="doc-image">
             </ul>
         </div>
 
