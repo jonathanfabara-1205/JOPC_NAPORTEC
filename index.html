@@ -10,18 +10,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/Z3NGFV3XXNBSBISIDTENT44ZVM.jpg'); /* Reemplaza con tu URL */
+            background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/Z3NGFV3XXNBSBISIDTENT44ZVM.jpg');
             background-size: cover;
-            background-position: center center;			
-            background-attachment: fixed;				
+            background-position: center center;
+            background-attachment: fixed;
             background-repeat: no-repeat;
-            color: white; /* Texto en blanco para destacar sobre el fondo */
+            color: white;
             text-align: center;
         }
 
         /* Contenedor principal */
         .container {
-            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
             max-width: 800px;
@@ -30,9 +30,9 @@
 
         /* Logo */
         .logo {
-            width: 400px;  /* Ajusta el tamaño del logo */
-            margin-top: 10px;  /* Espacio entre el logo y el título */
-            display: block; /* Para centrarlo */
+            width: 400px;
+            margin-top: 10px;
+            display: block;
             margin-left: auto;
             margin-right: auto;
         }
@@ -42,7 +42,7 @@
             display: inline-block;
             padding: 15px 25px;
             margin: 10px;
-            background-color: #1C919E; /* Verde */
+            background-color: #1C919E;
             color: white;
             font-size: 16px;
             text-decoration: none;
@@ -51,7 +51,7 @@
         }
 
         .button:hover {
-            background-color: #45a049; /* Verde más oscuro */
+            background-color: #45a049;
         }
 
         /* Ocultar secciones por defecto */
@@ -73,16 +73,20 @@
         li {
             margin: 10px 0;
             cursor: pointer;
+            text-decoration: underline;
+        }
+
+        li:hover {
+            color: #45a049;
         }
 
         /* Estilo para las imágenes de referencia */
         .doc-image {
-            display: none;  /* Inicialmente la imagen está oculta */
-            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+            display: none;
+            width: 100%;
             margin-top: 10px;
             border-radius: 10px;
         }
-
     </style>
     <script>
         function toggleSection(sectionId) {
@@ -90,9 +94,16 @@
             section.classList.toggle("hidden");
         }
 
-        function toggleImage(docId) {
-            const image = document.getElementById(docId);
-            image.classList.toggle("hidden");
+        function showImage(docId) {
+            // Ocultar todas las imágenes
+            const images = document.querySelectorAll('.doc-image');
+            images.forEach(img => img.style.display = 'none');
+
+            // Mostrar solo la imagen seleccionada
+            const selectedImage = document.getElementById(docId);
+            if (selectedImage) {
+                selectedImage.style.display = 'block';
+            }
         }
     </script>
 </head>
@@ -113,21 +124,23 @@
         <div id="requisitos" class="hidden">
             <h2>Documentos Requeridos</h2>
             <ul>
-                <li onclick="toggleImage('image1')">1. Notificación del Correo Impresa</li>
-                <img id="image1" src="impresion de correo.png" class="doc-image">
-                <li onclick="toggleImage('image2')">2. Carta de Autorización del Exportador</li>
-                <img id="image2" src="carta de autorizacion.png" class="doc-image">
-                <li onclick="toggleImage('image3')">3. Copias de Cédula, Exportador y Representante Legal</li>
-                <img id="image3" src="cédula.png" class="doc-image">
-                <li onclick="toggleImage('image4')">4. Declaración Aduanera DAE</li>
-                <img id="image4" src="dae.png" alt="Imagen de referencia 4" class="doc-image">
-                <li onclick="toggleImage('image5')">5. Interchange Equipamen del Contenedor</li>
-                <img id="image5" src="intercambio.png" alt="Imagen de referencia 5" class="doc-image">
-                <li onclick="toggleImage('image6')">6. Fáctura Comercial</li>
-                <img id="image6" src="https://convert-system.com/wp-content/uploads/2024/06/software-facturacion.jpg" alt="Imagen de referencia 6" class="doc-image">
-                <li onclick="toggleImage('image7')">7. Autorización de Ingreso y Salida de Vehículos</li>
-                <img id="image7" src="aisv.png" alt="Imagen de referencia 7" class="doc-image">
+                <li onclick="showImage('image1')">1. Notificación del Correo Impresa</li>
+                <li onclick="showImage('image2')">2. Carta de Autorización del Exportador</li>
+                <li onclick="showImage('image3')">3. Copias de Cédula, Exportador y Representante Legal</li>
+                <li onclick="showImage('image4')">4. Declaración Aduanera DAE</li>
+                <li onclick="showImage('image5')">5. Interchange Equipamen del Contenedor</li>
+                <li onclick="showImage('image6')">6. Factura Comercial</li>
+                <li onclick="showImage('image7')">7. Autorización de Ingreso y Salida de Vehículos</li>
             </ul>
+
+            <!-- Imágenes de referencia -->
+            <img id="image1" src="impresion de correo.png" class="doc-image">
+            <img id="image2" src="carta de autorizacion.png" class="doc-image">
+            <img id="image3" src="cédula.png" class="doc-image">
+            <img id="image4" src="dae.png" class="doc-image">
+            <img id="image5" src="intercambio.png" class="doc-image">
+            <img id="image6" src="https://convert-system.com/wp-content/uploads/2024/06/software-facturacion.jpg" class="doc-image">
+            <img id="image7" src="aisv.png" class="doc-image">
         </div>
 
         <!-- Sección de correos -->
