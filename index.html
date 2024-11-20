@@ -5,28 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú de Requisitos</title>
     <style>
+        /* Fondo general */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://via.placeholder.com/1500x900'); /* Reemplaza con tu URL */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Texto en blanco para destacar sobre el fondo */
             text-align: center;
-            margin: 20px;
         }
-        .menu {
-            margin: 20px;
+
+        /* Contenedor principal */
+        .container {
+            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 50px auto;
         }
+
+        /* Botones del menú */
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 25px;
             margin: 10px;
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Verde */
             color: white;
+            font-size: 16px;
             text-decoration: none;
             border-radius: 5px;
+            transition: 0.3s;
         }
+
         .button:hover {
-            background-color: #45a049;
+            background-color: #45a049; /* Verde más oscuro */
         }
+
+        /* Ocultar secciones por defecto */
         .hidden {
             display: none;
+        }
+
+        /* Títulos */
+        h1, h2 {
+            margin: 20px 0;
+        }
+
+        /* Lista */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
         }
     </style>
     <script>
@@ -37,33 +71,46 @@
     </script>
 </head>
 <body>
-    <h1>Menú de Requisitos</h1>
-    <div class="menu">
-        <a href="#" class="button" onclick="toggleSection('requisitos')">Ver Requisitos</a>
-        <a href="#" class="button" onclick="toggleSection('correos')">Ver Correos Electrónicos</a>
-    </div>
-    <div id="requisitos" class="hidden">
-        <h2>Documentos Requeridos</h2>
-        <ul>
-            <li>Documento 1</li>
-            <li>Documento 2</li>
-            <li>Documento 3</li>
-            <li>Documento 4</li>
-            <li>Documento 5</li>
-            <li>Documento 6</li>
-            <li>Documento 7</li>
-        </ul>
-    </div>
-    <div id="correos" class="hidden">
-        <h2>Correos Electrónicos</h2>
-        <ul>
-            <li>
-                Departamento A: <a href="#" onclick="alert('Documentos para Departamento A: Documento 1, Documento 2')">correoA@ejemplo.com</a>
-            </li>
-            <li>
-                Departamento B: <a href="#" onclick="alert('Documentos para Departamento B: Documento 3, Documento 4')">correoB@ejemplo.com</a>
-            </li>
-        </ul>
+    <div class="container">
+        <h1>Menú de Requisitos</h1>
+        <p>Accede rápidamente a los requisitos y correos electrónicos necesarios.</p>
+        <div class="menu">
+            <a href="#" class="button" onclick="toggleSection('requisitos')">Ver Requisitos</a>
+            <a href="#" class="button" onclick="toggleSection('correos')">Ver Correos Electrónicos</a>
+        </div>
+
+        <!-- Sección de requisitos -->
+        <div id="requisitos" class="hidden">
+            <h2>Documentos Requeridos</h2>
+            <ul>
+                <li>1. Documento de Identidad</li>
+                <li>2. Contrato firmado</li>
+                <li>3. Certificado de antecedentes</li>
+                <li>4. Factura original</li>
+                <li>5. Comprobante de pago</li>
+                <li>6. Documento adicional según el caso</li>
+                <li>7. Otros (detallados según el servicio)</li>
+            </ul>
+        </div>
+
+        <!-- Sección de correos -->
+        <div id="correos" class="hidden">
+            <h2>Correos Electrónicos</h2>
+            <ul>
+                <li>
+                    *Departamento A:*  
+                    <a href="#" onclick="alert('Documentos para Departamento A: Documento 1, Documento 2')">correoA@ejemplo.com</a>
+                </li>
+                <li>
+                    *Departamento B:*  
+                    <a href="#" onclick="alert('Documentos para Departamento B: Documento 3, Documento 4')">correoB@ejemplo.com</a>
+                </li>
+                <li>
+                    *Departamento C:*  
+                    <a href="#" onclick="alert('Documentos para Departamento C: Documento 5, Documento 6')">correoC@ejemplo.com</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
